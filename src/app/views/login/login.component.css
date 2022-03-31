@@ -1,7 +1,7 @@
 #container-login{
     display: flex;
     position: static;
-    border: 2px solid red;
+    border: 3px solid red;
     justify-content: center;
 }
 
@@ -16,3 +16,28 @@
 #senha{
 
 }
+
+h1{
+    text-align: center;
+    width: auto;
+    background-color: black;
+    color: greenyellow;
+}
+.box {
+    width: 300px;
+    height: 300px;
+    background: #fff;
+    }
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.form{
+    margin: 0 auto;
+    display: flex;
+  justify-content: center;
+}
+

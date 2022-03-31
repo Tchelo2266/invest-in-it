@@ -1,21 +1,43 @@
-<h1 style="color: red;">
-    <p>Login works!</p>
+
+<h1 >Página de login
 </h1>
-<div class="row position-absolute top-50 start-50 translate-middle">
-    <div class="col-md-12">
-        <div class="container" id="container-login">
-            <form action="" class="form-group">
-                <div class="row">
-                    <div class="col-md-12" id="usuario">
-                        <input class="input-login" type="text" name="usuario" id="usuario" placeholder="Usuário">
-                    </div>
+    <body>
+        
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="card p-3">
+        <form>
+        
+             <div class="form-group">
+        
+                    <label for="email">E-mail</label>
+        
+                    <input type="text" id="email" class="form-control">
+        
+            </div>
+        
+            <div class="form-group">
+        
+               <label for="senha">Senha</label>
+        
+                <input type="password" id="senha" class="form-control">
+        
+            </div>
+        
+                <div class="form-group">
+        
+                    <button class="btn btn-success" type="submit" [routerLink]="['/home']">Entrar</button>
+        
                 </div>
-                <div class="row">
-                    <div class="col-md-12" id="senha">
-                        <input class="input-login" type="password" name="senha" id="senha" placeholder="senha">        
-                    </div>
+                <div class="form-group">
+                    <button class="btn btn-warning align-items-center" type="submit" [routerLink]="['/perfil']">Perfil</button>
                 </div>
-            </form>
-        </div>        
-    </div>
-</div>
+              </form>
+        
+            </div>
+        
+        </div>
+    </body>
+        <router-outlet><router-outlet>
+    
+
+
