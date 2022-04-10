@@ -1,43 +1,57 @@
 
-<h1 >Página de login
-</h1>
-    <body>
-        
-        <div class="d-flex justify-content-center align-items-center">
-            <div class="card p-3">
-        <form>
-        
-             <div class="form-group">
-        
-                    <label for="email">E-mail</label>
-        
-                    <input type="text" id="email" class="form-control">
-        
-            </div>
-        
-            <div class="form-group">
-        
-               <label for="senha">Senha</label>
-        
-                <input type="password" id="senha" class="form-control">
-        
-            </div>
-        
-                <div class="form-group">
-        
-                    <button class="btn btn-success" type="submit" [routerLink]="['/home']">Entrar</button>
-        
+<body> 
+    <div class="d-flex justify-content-center align-items-center min-vh-100">
+        <div class="container">
+            <div class="row">
+                <div class="col logo">
+                    <div class="row vertical-align-center">
+                        <div class="invest">
+                            Invest
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="in-it">
+                            In It
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <button class="btn btn-warning align-items-center" type="submit" [routerLink]="['/perfil']">Perfil</button>
+                <div class="col" id="login">
+                    <form>
+                        <div class="row">
+                            <div class="row">
+                                <div class="col-sm-1 icone">
+                                    <!-- <fa-icon [icon]="faUser"></fa-icon> -->
+                                </div>
+                                <div class="col">
+                                    <input type="text" id="email" class="form-control" placeholder="Usuário">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1 icone">
+                                    <i class="fa-solid fa-key" aria-hidden="true"></i>
+                                </div>
+                                <div class="col">
+                                    <input type="password" id="senha" class="form-control" placeholder="Senha">
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row botoes">
+                            <div class="col text-left">
+                                <button class="btn btn-warning" type="submit" [routerLink]="['/perfil']">Perfil</button>
+                            </div>
+                            <div class="col text-right">
+                                <button class="btn btn-success" type="submit" [routerLink]="['/home']">Entrar</button>
+                            </div>
+                        </div>
+                    </form>    
                 </div>
-              </form>
-        
             </div>
-        
         </div>
-    </body>
-        <router-outlet><router-outlet>
+    </div>
+</body>
+
+<router-outlet><router-outlet>
     
 
 
