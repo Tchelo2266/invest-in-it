@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { IconsModule } from './icons/icons.module';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +7,4 @@ import { IconsModule } from './icons/icons.module';
 })
 export class AppComponent {
   title = 'invest-in-it';
-  icon = IconsModule;
 }
