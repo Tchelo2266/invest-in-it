@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { 
-  faUser 
+  faUser
 } from '@fortawesome/free-regular-svg-icons';
 
 import { 
-  faSpinner 
+  faKey
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -15,5 +15,5 @@ import {
 export class AppComponent {
   title = 'invest-in-it';
   faUser = faUser;
-  faSpinner = faSpinner;
+  faKey = faKey;
 }
