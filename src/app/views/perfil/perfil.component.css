@@ -1,0 +1,24 @@
+body{
+    background-color: #212A33
+}
+
+div{
+    background-color: #212A33;
+    padding: 3px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+form{
+    color: aliceblue;
+    border-color: greenyellow;
+    height: 50%;
+    width: 50%;
+    border-width: 0.5px;
+    border-style: groove;
+    border: 10px 10px 10px 10px;
+}
+
+button{
+    margin-left: 5px;
+}
