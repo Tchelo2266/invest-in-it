@@ -1,36 +1,54 @@
 <body>
-    <div class="d-flex justify-content-center align-items-center min-vh-100">
-    <form>
-        <div class="mb-3 text-center">
-          <img width="300px">
-        </div>
-    
-        <div class="mb-3">
-            <label for="nome" class="form-label" >Nome</label>
-            <input type="text" class="form-control" id="nome" 
-            name="nome" placeholder="Nome" >
-        </div>
-      
-        <div class="mb-3">
-          <label for="data" class="form-label" >Data de Nascimento</label>
-          <input type="text" class="form-control" id="data" name="data" placeholder="xx/xx/xxxx" >
-        </div>
-      
-        <div class="mb-3">
-          <label for="tel" class="form-label">Telefone</label>
-          <input type="text" class="form-control" id="tel" name="tel" placeholder="(xx) x xxxx-xxxx" >
-        </div>
-      
-        <div class="mb-3">
-            <label for="email" class="form-label">E-mail</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" >
+  <div class="justify-content-center align-items-center min-vh-100 box">
+    <div class="row text-center">
+      <div class="col-md-12">
+        <h1>Perfil do investidor</h1>  
+      </div>
+    </div>
+    <div class="row alinha-centro">
+      <div class="col-md-12 alinha-centro">
+        <form>
+          <div class="row text-center">
+            <!-- <img width="300px"> -->
+            <div class="col-md-12 icone">
+              <fa-icon [icon]="faUser"></fa-icon>
+            </div>
           </div>
-       
-          <div class="col text-right">
-            <button class="btn btn-success" type="submit" [routerLink]="['/home']">Salvar</button>
-             <button class="btn btn-warning" type="submit" [routerLink]="['/login']">Cancelar</button>
-        </div>
-      </form>
-</div>
-</body>
 
+          <div class="row">
+            <div class="col-md-12">
+              <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+              </div>
+        
+              <div class="mb-3">
+                <label for="data" class="form-label">Data de Nascimento</label>
+                <input type="text" class="form-control" id="data" name="data" placeholder="xx/xx/xxxx">
+              </div>
+        
+              <div class="mb-3">
+                <label for="tel" class="form-label">Telefone</label>
+                <input type="text" class="form-control" id="tel" name="tel" placeholder="(xx) x xxxx-xxxx">
+              </div>
+        
+              <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+              </div>
+        
+              <div class="col text-right">
+                <button class="btn btn-success" type="submit" [routerLink]="['/home']">Salvar</button>
+                <button class="btn btn-warning" type="submit" [routerLink]="['/login']">Cancelar</button>
+              </div>
+            </div>
+          </div>
+    
+          
+        </form>
+      </div>
+    </div>
+    
+  </div>
+  
+</body>

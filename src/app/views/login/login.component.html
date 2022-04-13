@@ -1,57 +1,54 @@
-
-<body> 
-    <div class="d-flex justify-content-center align-items-center min-vh-100">
-        <div class="container">
-            <div class="row">
-                <div class="col logo">
-                    <div class="row vertical-align-center">
-                        <div class="invest">
-                            Invest
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="in-it">
-                            In It
-                        </div>
-                    </div>
-                </div>
-                <div class="col" id="login">
-                    <form>
-                        <div class="row">
-                            <div class="row">
-                                <div class="col-sm-1 icone text-center">
-                                    <fa-icon [icon]="faUser"></fa-icon>
-                                </div>
-                                <div class="col">
-                                    <input type="text" id="email" class="form-control" placeholder="Usuário">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-1 icone">
-                                    <fa-icon [icon]="faKey"></fa-icon>
-                                </div>
-                                <div class="col">
-                                    <input type="password" id="senha" class="form-control" placeholder="Senha">
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="row botoes">
-                            <div class="col text-left">
-                                <button class="btn btn-warning" type="submit" [routerLink]="['/perfil']">Perfil</button>
-                            </div>
-                            <div class="col text-right">
-                                <button class="btn btn-success" type="submit" [routerLink]="['/home']">Entrar</button>
-                            </div>
-                        </div>
-                    </form>    
-                </div>
+<body>
+  <div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="container">
+      <div class="row">
+        <div class="col logo">
+          <div class="row vertical-align-center">
+            <div class="invest">
+              Invest
             </div>
+          </div>
+          <div class="row">
+            <div class="in-it">
+              In It
+            </div>
+          </div>
         </div>
+        <div class="col" id="login">
+          <form>
+            <div class="row">
+              <div class="row">
+                <div class="col-sm-1 icone text-center">
+                  <fa-icon [icon]="faUser"></fa-icon>
+                </div>
+                <div class="col">
+                  <input type="text" id="email" class="form-control" placeholder="Usuário">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-1 icone">
+                  <fa-icon [icon]="faKey"></fa-icon>
+                </div>
+                <div class="col">
+                  <input type="password" id="senha" class="form-control" placeholder="Senha">
+                </div>
+              </div>
+
+            </div>
+            <div class="row botoes">
+              <div class="col text-left">
+                <button class="btn btn-warning" type="submit" [routerLink]="['/perfil']">Perfil</button>
+              </div>
+              <div class="col text-right">
+                <button class="btn btn-success" type="submit" [routerLink]="['/home']">Entrar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 </body>
 
-<router-outlet><router-outlet>
-    
-
-
+<router-outlet>
+  <router-outlet>

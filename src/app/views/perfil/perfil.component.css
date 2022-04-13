@@ -2,23 +2,52 @@ body{
     background-color: #212A33
 }
 
+.box{
+    padding-top: 4%;
+    padding-bottom: auto;
+}
+
+h1{
+    color: white;
+    font-size: 3rem;
+    padding-bottom: 1%;
+}
+
+.icone{
+    color: #FFBF00;
+    background-color: white;
+    border-radius: 100%;
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 div{
     background-color: #212A33;
-    padding: 3px;
+    /* padding: 3px; */
     margin-left: 2px;
     margin-right: 2px;
 }
 
 form{
     color: aliceblue;
-    border-color: greenyellow;
-    height: 50%;
-    width: 50%;
-    border-width: 0.5px;
-    border-style: groove;
-    border: 10px 10px 10px 10px;
+    /* border-color: greenyellow; */
+    width: 40%;
+    /* border-width: 0.5px; */
+    /* border-style: groove; */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 button{
     margin-left: 5px;
+}
+
+.text-center{
+    text-align: center !important;
+}
+.alinha-centro{
+    align-items: center !important;
 }
