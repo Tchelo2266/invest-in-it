@@ -1,1 +1,36 @@
-<h3 style="color: blue;"> Perfil ta aberto!</h3>
+<body>
+    <div class="d-flex justify-content-center align-items-center min-vh-100">
+    <form>
+        <div class="mb-3 text-center">
+          <img width="300px">
+        </div>
+    
+        <div class="mb-3">
+            <label for="nome" class="form-label" >Nome</label>
+            <input type="text" class="form-control" id="nome" 
+            name="nome" placeholder="Nome" >
+        </div>
+      
+        <div class="mb-3">
+          <label for="data" class="form-label" >Data de Nascimento</label>
+          <input type="text" class="form-control" id="data" name="data" placeholder="xx/xx/xxxx" >
+        </div>
+      
+        <div class="mb-3">
+          <label for="tel" class="form-label">Telefone</label>
+          <input type="text" class="form-control" id="tel" name="tel" placeholder="(xx) x xxxx-xxxx" >
+        </div>
+      
+        <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" >
+          </div>
+       
+          <div class="col text-right">
+            <button class="btn btn-success" type="submit" [routerLink]="['/home']">Salvar</button>
+             <button class="btn btn-warning" type="submit" [routerLink]="['/login']">Cancelar</button>
+        </div>
+      </form>
+</div>
+</body>
+
