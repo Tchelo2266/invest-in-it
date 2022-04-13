@@ -26,17 +26,13 @@ h1{
 
 div{
     background-color: #212A33;
-    /* padding: 3px; */
     margin-left: 2px;
     margin-right: 2px;
 }
 
 form{
     color: aliceblue;
-    /* border-color: greenyellow; */
-    width: 40%;
-    /* border-width: 0.5px; */
-    /* border-style: groove; */
+    width: 30%;
     margin-left: auto;
     margin-right: auto;
 }
