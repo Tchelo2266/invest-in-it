@@ -1,5 +1,38 @@
-<button class="btn btn-warning align-items-center" type="submit" [routerLink]="['/perfil']">Perfil</button>
-<button class="btn btn-success" type="submit" [routerLink]="['/login']">Voltar</button>
+<body>
+  <div class="justify-content-center min-vh-100">
+    <div class="row text-center">
+      <div class="col-md-12">
+        <h1 class="dashboard">Dashboard</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="composicao">Composição</h4>
+        <table class="table tabela-composicao text-center">
+          <thead class="table-dark">
+            <tr>
+              <th> Ativo </th>
+              <th >Preço </th>
+              <th> Quantidade </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ativo of ativos">
+              <td>{{ativo.tag}}</td>
+              <td>R${{ativo.preco}}</td>
+              <td>{{ativo.quantidade}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+    <button class="btn btn-warning align-items-center" type="submit" [routerLink]="['/perfil']">Perfil</button>
+    <button class="btn btn-success" type="submit" [routerLink]="['/login']">Voltar</button>
+
+</body>
+
 
 
 
