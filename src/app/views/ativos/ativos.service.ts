@@ -36,7 +36,7 @@ export class AtivosService {
       tag: 'VINO11',
       preco: 50.10,
       quantidade: 1
-    },
+    }
   ];
 
   constructor() { }

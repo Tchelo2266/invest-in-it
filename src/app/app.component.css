@@ -2,8 +2,28 @@
   /* margin-right: 0%;
   padding-right: 0%;
   margin-left: auto;
-  padding-left: auto; */
-  /* margin: 0%;
-  padding: 0%; */
-  /* width: 100%; */
+  padding-left: auto;
+  margin: 0%;
+  padding: 0%;
+  width: 100%; */
+}
+
+div{
+  padding: 0%;
+  width: max-content;
+  margin-right: 0px;
+}
+
+.row{
+  height: max-content;
+  margin-left: 0px;
+
+}
+
+.aaa{
+  width: max-content;
+}
+
+.bbb{
+  width: max-content;
 }

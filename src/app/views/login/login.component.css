@@ -1,15 +1,26 @@
-input{
-    margin-top: 3%;
+body{
+  width: 100%;
 }
 
-.box {
+.container{
+  padding-left: 250px;
+  padding-right: 250px;
+  margin-left: 100px;
+  margin-right: 10.8em;
+}
+
+input{
+  margin-top: 3%;
+}
+
+/* .box {
     width: 300px;
     height: 300px;
     background: #fff;
-}
+} */
 
 body {
-    background-color: #212A33;    
+    background-color: #212A33;
 }
 
 .logo{
