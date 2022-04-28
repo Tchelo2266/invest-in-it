@@ -45,4 +45,27 @@ export class AtivosService {
     return this.ativos;
   }
 
+  public add(ativo: Ativos){
+    ativo.id= this.ativos.length;
+    this.ativos.push(ativo);
+  }
+
+  public deletar(id: number){
+    for( let obj of this.ativos){
+      if(obj.id === id){
+        
+      }
+    }
+  }
+
+  public editar(ativo: Ativos){
+    for( let obj of this.ativos){
+      if(obj.id === ativo.id){
+        ativo.preco= obj.preco;
+        ativo.quantidade= ativo.quantidade;
+        break;
+      }
+    }
+  }
+
 }

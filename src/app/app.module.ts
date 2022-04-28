@@ -8,6 +8,7 @@ import { HomePageComponent } from './views/home-page/home-page.component';
 import { LoginComponent } from './views/login/login.component';
 import { PerfilComponent } from './views/perfil/perfil.component';
 import { SidebarComponent } from './views/sidebar/sidebar.component';
+import { WalletComponent } from './views/wallet/wallet.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { SidebarComponent } from './views/sidebar/sidebar.component';
     LoginComponent,
     PerfilComponent,
     SidebarComponent,
+    WalletComponent,
   ],
   imports: [
     BrowserModule,
