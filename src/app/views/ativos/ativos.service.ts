@@ -1,71 +1,43 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Ativos } from '../models/ativos.model'
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class AtivosService {
+  private url: string= "http://localhost:3000";
 
-  public ativos: Array<Ativos> = [
-    {
-      id: 0,
-      tag: 'XPCI11',
-      preco: 97.80,
-      quantidade: 6
-    },
-    {
-      id: 1,
-      tag: 'CPTS11',
-      preco: 98.10,
-      quantidade: 6
-    },
-    {
-      id: 2,
-      tag: 'BBPO11',
-      preco: 110.40,
-      quantidade: 5
-    },
-    {
-      id: 3,
-      tag: 'RBVA11',
-      preco: 105.30,
-      quantidade: 3
-    },
-    {
-      id: 4,
-      tag: 'VINO11',
-      preco: 50.10,
-      quantidade: 1
-    }
-  ];
+  constructor(private httpCliente: HttpClient) { }
 
-  constructor() { }
-
-  public getAll(): Array<Ativos>{
-    return this.ativos;
+  public getAll(): Observable<Ativos[]>{
+    return this.httpCliente.get<Ativos[]>(this.url);
   }
 
-  public add(ativo: Ativos){
-    ativo.id= this.ativos.length;
-    this.ativos.push(ativo);
+  public add(ativo: Ativos): Observable<any>{
+    const ativoPost= JSON.stringify(ativo);
+    return this.httpCliente.post(this.url, ativoPost, httpOptions);
   }
 
   public deletar(id: number){
-    for( let obj of this.ativos){
-      if(obj.id === id){
-        
-      }
-    }
+    return this.httpCliente.delete(this.url+id);
   }
 
   public editar(ativo: Ativos){
-    for( let obj of this.ativos){
-      if(obj.id === ativo.id){
-        ativo.preco= obj.preco;
-        ativo.quantidade= ativo.quantidade;
-        break;
-      }
-    }
+    const ativoPut= JSON.stringify(ativo);
+    const id= ativo.id;
+    return this.httpCliente.put(this.url+id, ativoPut, httpOptions);
+  }
+
+  public get(id: number){
+    return this.httpCliente.get<Ativos>(this.url+id);
   }
 
 }
