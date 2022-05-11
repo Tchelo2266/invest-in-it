@@ -14,8 +14,9 @@ export class HomePageComponent implements OnInit {
   constructor(private ativosService: AtivosService) { }
 
   ngOnInit(): void {
-    this.ativos = this.ativosService.getAll();
-    console.log(this.ativos)
+    this.ativosService.getAll().subscribe((ativos: Array<Ativos>)=>{
+      this.ativos= ativos;
+    });
   }
 
 }
