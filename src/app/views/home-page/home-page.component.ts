@@ -17,7 +17,7 @@ export class HomePageComponent implements OnInit {
     this.ativosService.getAll().subscribe((ativos: Array<Ativos>)=>{
       this.ativos= ativos;
     });
-    console.log("Ativos", this.ativos);
+    // console.log("Ativos", this.ativos);
   }
 
 }
