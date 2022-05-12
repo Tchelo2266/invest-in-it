@@ -18,7 +18,7 @@ export class AtivosService {
   constructor(private httpCliente: HttpClient) { }
 
   public getAll(): Observable<Ativos[]>{
-    return this.httpCliente.get<Ativos[]>(this.url);
+    return this.httpCliente.get<Ativos[]>(this.url+"/ativos");
   }
 
   public add(ativo: Ativos): Observable<any>{
