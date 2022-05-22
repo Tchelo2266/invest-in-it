@@ -13,29 +13,29 @@ import { Usuario } from '../models/usuario.model';
 export class LoginComponent implements OnInit {
   faUser = faUser;
   faKey = faKey;
-
-  public usuarios: Array<Usuario> = [];
+  
+  public usuario: Usuario = new Usuario();
 
   constructor(private usuarioService: UsuarioService, private rota: Router, private rotaAtiva: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.usuarioService.getAll().subscribe((usuarios: Array<Usuario>) =>{
-      this.usuarios = usuarios;
-    })
-
   }
 
-  public validaLogin(login: string, senha: string){
-    let usuario = {"login": login, "senha": senha};
-    if(usuario.login){
-      this.usuarioService.getByUsuario(usuario.login, usuario.senha).subscribe((respostaUsuario: Usuario) => {
-        if(respostaUsuario){
-          if(respostaUsuario.senha === usuario.senha){
+  public validaLogin(){
+    if(this.usuario.usuario){
+      this.usuarioService.getByUsuario(this.usuario.usuario).subscribe((respostaUsuario: Usuario[]) => {
+
+        const [usuarioValida] = respostaUsuario;
+        if(this.usuario.senha){
+          if(this.usuario.senha.toString() === usuarioValida.senha){
             this.rota.navigate(['/home']);
+          }else{
+            alert("Senha inválida!");
           }
+        }else{
+          alert("Digite uma senha")
         }
       });
-      console.log()
     }
   }
 

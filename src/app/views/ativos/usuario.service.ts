@@ -41,9 +41,10 @@ export class UsuarioService {
     return this.httpCliente.get<Usuario>(this.url+id);
   }
 
-  public getByUsuario(usuario: string, senha: string){
-    const url = this.url+'?usuario='+usuario;
-    return this.httpCliente.get<Usuario>(url);
+  public getByUsuario(usuario: string){
+    const url = this.url+'/usuario?usuario='+usuario;
+    console.log(url);
+    return this.httpCliente.get<Usuario[]>(url);
   }
 
 }

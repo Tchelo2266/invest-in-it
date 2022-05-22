@@ -35,20 +35,35 @@
     {
       "id": 0,
       "usuario": "Marcelo",
-      "senha": "123456789",
-      "tipo_usuario": 1
+      "nome": "Marcelo Mayrink",
+      "senha": "1234",
+      "tipo_usuario": 1,
+      "email": "marcelo@gmail.com",
+      "data_nascimento": "19/06/2001",
+      "data_cadastro": "01/01/2022",
+      "data_alteracao": ""
     },
     {
       "id": 1,
       "usuario": "Edgar",
-      "senha": "123456789",
-      "tipo_usuario": 1
+      "nome": "Edgar",
+      "senha": "1234",
+      "tipo_usuario": 1,
+      "email": "edgar@gmail.com",
+      "data_nascimento": "",
+      "data_cadastro": "01/01/2022",
+      "data_alteracao": ""
     },
     {
       "id": 2,
       "usuario": "José",
+      "nome": "José",
       "senha": "senha123",
-      "tipo_usuario": 2
+      "tipo_usuario": 2,
+      "email": "jose@gmail.com",
+      "data_nascimento": "",
+      "data_cadastro": "01/01/2022",
+      "data_alteracao": ""
     }
   ]
 }

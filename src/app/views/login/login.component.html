@@ -15,14 +15,14 @@
           </div>
         </div>
         <div class="col" id="login">
-          <form>
+          <form id="dados">
             <div class="row">
               <div class="row">
                 <div class="col-sm-1 icone text-center">
                   <fa-icon [icon]="faUser"></fa-icon>
                 </div>
                 <div class="col">
-                  <input type="text" id="email" class="form-control" placeholder="Usuário">
+                  <input [(ngModel)]="usuario.usuario" name="usuario" type="text" id="usuario" class="form-control" placeholder="Usuário">
                 </div>
               </div>
               <div class="row">
@@ -30,7 +30,7 @@
                   <fa-icon [icon]="faKey"></fa-icon>
                 </div>
                 <div class="col">
-                  <input type="password" id="senha" class="form-control" placeholder="Senha">
+                  <input  [(ngModel)]="usuario.senha" name="senha" type="password" id="senha" class="form-control" placeholder="Senha">
                 </div>
               </div>
 
@@ -40,7 +40,7 @@
                 <button class="btn btn-warning" type="submit" [routerLink]="['/perfil']">Perfil</button>
               </div>
               <div class="col text-right">
-                <button class="btn btn-success" type="submit" (click)="validaLogin()">Entrar</button>
+                <button class="btn btn-success" type="button" (click)="validaLogin()">Entrar</button>
               </div>
             </div>
           </form>
