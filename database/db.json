@@ -30,5 +30,25 @@
       "preco": 50.10,
       "quantidade": 1
     }
+  ],
+  "usuario": [
+    {
+      "id": 0,
+      "usuario": "Marcelo",
+      "senha": "123456789",
+      "tipo_usuario": 1
+    },
+    {
+      "id": 1,
+      "usuario": "Edgar",
+      "senha": "123456789",
+      "tipo_usuario": 1
+    },
+    {
+      "id": 2,
+      "usuario": "José",
+      "senha": "senha123",
+      "tipo_usuario": 2
+    }
   ]
 }
