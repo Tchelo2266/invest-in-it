@@ -47,4 +47,10 @@ export class UsuarioService {
     return this.httpCliente.get<Usuario[]>(url);
   }
 
+  public checarLogin(user: Usuario): Observable<Usuario[]> {
+    const url = this.url.substring(0, this.url.length-1);
+    return this.httpCliente.get<Usuario[]>(url
+      +'?email='+user.email+'&senha='+user.senha);
+  }
+
 }

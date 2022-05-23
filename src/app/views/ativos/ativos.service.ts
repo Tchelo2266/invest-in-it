@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Ativos } from '../models/ativos.model'
-
+import { environment } from 'src/environments/environment'
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json'
@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AtivosService {
-  private url: string= "http://localhost:3000";
+  private url: string= environment.api+"ativos";
 
   constructor(private httpCliente: HttpClient) { }
 
