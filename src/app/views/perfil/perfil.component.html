@@ -7,7 +7,8 @@
     </div>
     <div class="row alinha-centro">
       <div class="col-md-12 alinha-centro">
-        <form>
+
+        <form #form="ngForm" (ngSubmit)="registrar() ">
           <div class="row text-center">
             <div class="col-md-12 icone">
               <fa-icon [icon]="faUser"></fa-icon>
@@ -18,12 +19,32 @@
             <div class="col-md-12">
               <div class="mb-3">
                 <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+                <input  name="nome" formControlName="nome"
+                type="text" class="form-control" id="nome">
+
+                <div *ngIf="(userForm.get('nome')?.errors?.['required'] || 
+                     userForm.get('nome')?.errors?.['minlength'] ||
+                     userForm.get('nome')?.errors?.['maxlength'])" 
+
+                    class="alert alert-danger" role="alert">
+                    Informe o nome do usuário, respeitando as quantidades mínima 
+                    e máxima de caracteres que são iguais a 5 e 255, 
+                    respectivamente!
+                </div>
               </div>
         
               <div class="mb-3">
                 <label for="data" class="form-label">Data de Nascimento</label>
-                <input type="text" class="form-control" id="data" name="data" placeholder="xx/xx/xxxx">
+                <input  name="dataNascimento" formControlName="dataNascimento"
+                type="text" class="form-control" id="dataNascimento">
+
+                <div class="alert alert-danger" role="alert"
+                *ngIf="(userForm.get('dataNascimento')?.errors?.['required'] || 
+                userForm.get('dataNascimento')?.errors?.['minlength']) "
+               >
+               Informe sua data de Nascimento
+                </div>
+            </div>
               </div>
         
               <div class="mb-3">
@@ -33,21 +54,49 @@
         
               <div class="mb-3">
                 <label for="email" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                <div class="alert alert-danger" role="alert"
+               *ngIf="(userForm.get('email')?.errors?.['required'] || 
+               userForm.get('email')?.errors?.['email'])">
+              Informe o email correto
+               </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="senha" class="form-label">Senha</label>
+                <input  name="senha" formControlName="senha"
+                 type="password" class="form-control" id="senha">
+  
+                 <div class="alert alert-danger" role="alert"
+                 *ngIf="(userForm.get('senha')?.errors?.['required'] || 
+                 userForm.get('senha')?.errors?.['minlength'])"
+                >
+                Informe uma senha com pelo menos 6 dígitos
+                 </div>
+              </div>
+  
+              <div class="mb-3">
+                  <label for="senhaCheck" class="form-label">Confirmar Senha</label>
+                  <input  name="senhaCheck" formControlName="senhaCheck"
+                  type="password" class="form-control" id="senhaCheck">
+  
+                  <div class="alert alert-danger" role="alert"
+                   *ngIf="(userForm.get('senhaCheck')?.errors?.['required'] || 
+                  userForm.get('senhaCheck')?.errors?.['minlength'])">
+                 Confirme a senha
+                  </div>
               </div>
         
               <div class="col text-right">
-                <button class="btn btn-success" type="submit" [routerLink]="['/home']">Salvar</button>
+                <button [disabled]="!userForm.valid" class="btn btn-success" type="submit" [routerLink]="['/home']">Salvar</button>
                 <button class="btn btn-warning" type="submit" [routerLink]="['/login']">Cancelar</button>
               </div>
             </div>
-          </div>
+          
     
           
         </form>
       </div>
     </div>
-    
-  </div>
-  
-</body>
+    </div>
+    </body>
+
