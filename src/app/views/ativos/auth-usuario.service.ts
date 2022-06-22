@@ -14,8 +14,10 @@ export class AuthUsuarioService {
     constructor(private rota: Router, private userServ: UsuarioService) { }
 
     public logar(usuario: Usuario) {
+        console.log("entrou logar")
         this.userServ.checarLogin(usuario).subscribe((resposta:Usuario[])=>{
             const [ usuarioLogin ] = resposta;
+            console.log("usuario",usuario)
 
             if (usuarioLogin) {
               this.setAutenticado(true);
@@ -23,8 +25,6 @@ export class AuthUsuarioService {
             } else {
                 this.setAutenticado(false);
             }
-
-            
 
         }); 
     }
