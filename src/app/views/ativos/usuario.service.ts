@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class UsuarioService {
-  private url: string= "http://localhost:3000";
+  private url: string = "http://localhost:3000";
 
   constructor(private httpCliente: HttpClient) { }
 
@@ -48,9 +48,10 @@ export class UsuarioService {
   }
 
   public checarLogin(user: Usuario): Observable<Usuario[]> {
-    const url = this.url.substring(0, this.url.length-1);
+    console.log(this.url.substring(0, this.url.length))
+    const url = this.url.substring(0, this.url.length);
     return this.httpCliente.get<Usuario[]>(url
-      +'?email='+user.email+'&senha='+user.senha);
+      +'/usuario?usuario='+user.usuario+'&senha='+user.senha);
   }
 
 }
