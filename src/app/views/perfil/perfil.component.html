@@ -8,7 +8,7 @@
     <div class="row alinha-centro">
       <div class="col-md-12 alinha-centro">
 
-        <form #form="ngForm" (ngSubmit)="registrar() ">
+        <form #form="ngForm" [formGroup]="userForm" (ngSubmit)="registrar() ">
           <div class="row text-center">
             <div class="col-md-12 icone">
               <fa-icon [icon]="faUser"></fa-icon>
@@ -22,9 +22,10 @@
                 <input  name="nome" formControlName="nome"
                 type="text" class="form-control" id="nome">
 
-                <div *ngIf="(userForm.get('nome')?.errors?.['required'] || 
+                <div *ngIf="((userForm.get('nome')?.errors?.['required'] || 
                      userForm.get('nome')?.errors?.['minlength'] ||
-                     userForm.get('nome')?.errors?.['maxlength'])" 
+                     userForm.get('nome')?.errors?.['maxlength']) && 
+                     (form.submitted || userForm.get('nome')?.touched))" 
 
                     class="alert alert-danger" role="alert">
                     Informe o nome do usuário, respeitando as quantidades mínima 
@@ -35,12 +36,13 @@
         
               <div class="mb-3">
                 <label for="data" class="form-label">Data de Nascimento</label>
-                <input  name="dataNascimento" formControlName="dataNascimento"
-                type="text" class="form-control" id="dataNascimento">
+                <input  name="data_nascimento" formControlName="data_nascimento"
+                type="text" class="form-control" id="data_nascimento">
 
                 <div class="alert alert-danger" role="alert"
-                *ngIf="(userForm.get('dataNascimento')?.errors?.['required'] || 
-                userForm.get('dataNascimento')?.errors?.['minlength']) "
+                *ngIf="((userForm.get('data_nascimento')?.errors?.['required'] || 
+                userForm.get('data_nascimento')?.errors?.['minlength'])&&
+                (form.submitted || userForm.get('data_nascimento')?.touched)) "
                >
                Informe sua data de Nascimento
                 </div>
@@ -54,9 +56,11 @@
         
               <div class="mb-3">
                 <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@gmail.com">
                 <div class="alert alert-danger" role="alert"
-               *ngIf="(userForm.get('email')?.errors?.['required'] || 
-               userForm.get('email')?.errors?.['email'])">
+               *ngIf="((userForm.get('email')?.errors?.['required'] || 
+               userForm.get('email')?.errors?.['email']) && 
+               (form.submitted || userForm.get('email')?.touched))">
               Informe o email correto
                </div>
               </div>
@@ -67,8 +71,9 @@
                  type="password" class="form-control" id="senha">
   
                  <div class="alert alert-danger" role="alert"
-                 *ngIf="(userForm.get('senha')?.errors?.['required'] || 
-                 userForm.get('senha')?.errors?.['minlength'])"
+                 *ngIf="((userForm.get('senha')?.errors?.['required'] || 
+                 userForm.get('senha')?.errors?.['minlength']) &&
+                 (form.submitted || userForm.get('senha')?.touched))"
                 >
                 Informe uma senha com pelo menos 6 dígitos
                  </div>
@@ -80,14 +85,15 @@
                   type="password" class="form-control" id="senhaCheck">
   
                   <div class="alert alert-danger" role="alert"
-                   *ngIf="(userForm.get('senhaCheck')?.errors?.['required'] || 
-                  userForm.get('senhaCheck')?.errors?.['minlength'])">
+                   *ngIf="((userForm.get('senhaCheck')?.errors?.['required'] || 
+                  userForm.get('senhaCheck')?.errors?.['minlength']) && 
+                  (form.submitted || userForm.get('senhaCheck')?.touched))">
                  Confirme a senha
                   </div>
               </div>
         
               <div class="col text-right">
-                <button [disabled]="!userForm.valid" class="btn btn-success" type="submit" [routerLink]="['/home']">Salvar</button>
+                <button class="btn btn-success" type="submit" [routerLink]="['/home']">Salvar</button>
                 <button class="btn btn-warning" type="submit" [routerLink]="['/login']">Cancelar</button>
               </div>
             </div>

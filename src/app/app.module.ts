@@ -26,6 +26,7 @@ import { WalletComponent } from './views/wallet/wallet.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule

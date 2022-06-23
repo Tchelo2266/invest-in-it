@@ -19,7 +19,7 @@
           <tbody>
             <tr *ngFor="let ativo of ativos">
               <td>{{ativo.tag}}</td>
-              <td>R${{ativo.preco}}</td>
+              <td>{{ativo.preco | currency: 'BRL' }}</td>
               <td>{{ativo.quantidade}}</td>
             </tr>
           </tbody>
